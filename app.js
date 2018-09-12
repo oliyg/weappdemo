@@ -6,7 +6,8 @@ const pluginHapiSwagger = require('./plugins/hapi-swagger')
 // ! 此处还是建议采用统一的 routes 入口文件 index.js
 // ! require 太多 routes 会导致代码量增加降低可读性
 // ! 建议使用 blob 方法统一获取 routes 文件夹下的所有路由
-const helloworld = require('./routes/hello-world') // routes
+const routesHelloWorld = require('./routes/hello-world') // routes
+const routesShops = require('./routes/shops')
 
 const server = new Hapi.Server()
 
@@ -24,7 +25,8 @@ const init = async () => {
 
     // routes activator
     server.route([
-        ...helloworld
+        ...routesHelloWorld,
+        ...routesShops
     ])
 
     await server.start()
