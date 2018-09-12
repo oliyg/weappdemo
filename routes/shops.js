@@ -1,3 +1,4 @@
+const Joi = require('joi')
 const GROUP_NAME = 'shops'
 
 module.exports = [{
@@ -17,7 +18,14 @@ module.exports = [{
         reply()
     },
     config: {
+        // docs
         tags: ['api', GROUP_NAME],
-        description: 'get current shop good list'
+        description: 'get current shop good list',
+        // validation
+        validate: {
+            params: {
+                shopId: Joi.number().required()
+            }
+        }
     }
 }]

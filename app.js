@@ -8,6 +8,7 @@ const pluginHapiSwagger = require('./plugins/hapi-swagger')
 // ! 建议使用 blob 方法统一获取 routes 文件夹下的所有路由
 const routesHelloWorld = require('./routes/hello-world') // routes
 const routesShops = require('./routes/shops')
+const routesOrders = require('./routes/orders')
 
 const server = new Hapi.Server()
 
@@ -26,7 +27,8 @@ const init = async () => {
     // routes activator
     server.route([
         ...routesHelloWorld,
-        ...routesShops
+        ...routesShops,
+        ...routesOrders
     ])
 
     await server.start()
