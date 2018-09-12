@@ -1,0 +1,24 @@
+{
+  "name": "weappdemo",
+  "version": "1.0.0",
+  "description": "weappdemo",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/oliyg/weappdemo.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/oliyg/weappdemo/issues"
+  },
+  "homepage": "https://github.com/oliyg/weappdemo#readme",
+  "dependencies": {
+    "env2": "^2.2.2",
+    "hapi": "^16.6.3"
+  }
+}
