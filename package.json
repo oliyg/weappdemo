@@ -6,7 +6,9 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "createdb:dev": "node_modules/.bin/sequelize db:create",
-    "createdb:prod": "node_modules/.bin/sequelize db:create --env production"
+    "createdb:prod": "node_modules/.bin/sequelize db:create --env production",
+    "createtable": "node_modules/.bin/sequelize db:migrate",
+    "droptable": "node_modules/.bin/sequelize db:migrate:undo:all"
   },
   "repository": {
     "type": "git",
