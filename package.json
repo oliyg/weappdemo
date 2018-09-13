@@ -8,7 +8,9 @@
     "createdb:dev": "node_modules/.bin/sequelize db:create",
     "createdb:prod": "node_modules/.bin/sequelize db:create --env production",
     "createtable": "node_modules/.bin/sequelize db:migrate",
-    "droptable": "node_modules/.bin/sequelize db:migrate:undo:all"
+    "droptable": "node_modules/.bin/sequelize db:migrate:undo:all",
+    "createseed": "node_modules/.bin/sequelize db:seed:all",
+    "dropseed": "node_modules/.bin/sequelize db:seed:undo:all"
   },
   "repository": {
     "type": "git",
