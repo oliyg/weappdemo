@@ -4,7 +4,9 @@
   "description": "weappdemo",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "createdb:dev": "node_modules/.bin/sequelize db:create",
+    "createdb:prod": "node_modules/.bin/sequelize db:create --env production"
   },
   "repository": {
     "type": "git",
@@ -25,5 +27,10 @@
     "joi": "^13.6.0",
     "package": "^1.0.1",
     "vision": "^4.1.1"
+  },
+  "devDependencies": {
+    "mysql2": "^1.6.1",
+    "sequelize": "^4.38.1",
+    "sequelize-cli": "^4.1.1"
   }
 }
