@@ -30,8 +30,17 @@ module.exports = [{
 }, {
     method: 'GET',
     path: `/${GROUP_NAME}/{shopId}/goods`,
-    handler: (request, reply) => {
-        reply()
+    handler: async (request, reply) => {
+        const res = await models.goods.findAndCountAll({
+            where: {
+                shop_id: request.params.shopId
+            },
+            attributes: ['id', 'name'],
+            limit: request.query.limit,
+            offset: (request.query.page - 1) * request.query.limit
+        })
+        const { rows: results, count: totalCount } = res
+        reply({ results, totalCount })
     },
     config: {
         // docs
@@ -40,7 +49,10 @@ module.exports = [{
         // validation
         validate: {
             params: {
-                shopId: Joi.number().required()
+                shopId: Joi.number().required().description('shop id')
+            },
+            query: {
+                ...paginationDefine
             }
         }
     }
