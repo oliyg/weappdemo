@@ -4,8 +4,7 @@ module.exports = (sequelize, DataTypes) => {
     id: {
       type: DataTypes.INTEGER,
       autoIncrement: true,
-      primaryKey: true,
-      allowNull: true // ! id 自增查询等逻辑不需要设置为必传项
+      primaryKey: true
     },
     name: {
       type: DataTypes.STRING,
