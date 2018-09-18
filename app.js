@@ -10,6 +10,7 @@ const pluginHapiPagination = require('./plugins/hapi-pagination')
 const routesHelloWorld = require('./routes/hello-world') // routes
 const routesShops = require('./routes/shops')
 const routesOrders = require('./routes/orders')
+const routesUsers = require('./routes/users')
 
 const server = new Hapi.Server()
 
@@ -30,7 +31,8 @@ const init = async () => {
     server.route([
         ...routesHelloWorld,
         ...routesShops,
-        ...routesOrders
+        ...routesOrders,
+        ...routesUsers
     ])
 
     await server.start()

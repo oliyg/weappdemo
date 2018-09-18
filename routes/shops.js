@@ -25,7 +25,8 @@ module.exports = [{
             query: {
                 ...paginationDefine
             }
-        }
+        },
+        auth: false // todo hapi-auth-jwt2 对 jwt 的认证；该路由不需要认证
     }
 }, {
     method: 'GET',
