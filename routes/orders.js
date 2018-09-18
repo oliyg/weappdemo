@@ -1,4 +1,5 @@
 const Joi = require('joi')
+const { jwtHeaderDefine } = require('../utils/router-helper')
 const GROUP_NAME = 'orders'
 
 module.exports = [{
@@ -9,7 +10,10 @@ module.exports = [{
     },
     config: {
         tags: ['api', GROUP_NAME],
-        description: 'create order'
+        description: 'create order',
+        validate: {
+            ...jwtHeaderDefine
+        }
     }
 }, {
     method: 'POST',
