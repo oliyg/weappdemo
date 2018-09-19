@@ -24,6 +24,7 @@
   },
   "homepage": "https://github.com/oliyg/weappdemo#readme",
   "dependencies": {
+    "axios": "^0.18.0",
     "env2": "^2.2.2",
     "hapi": "^16.6.3",
     "hapi-auth-jwt2": "^7.4.1",
