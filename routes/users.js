@@ -50,7 +50,7 @@ module.exports = [{
         // openid 用来查看 users 数据表中是否存在该用户
         // session_key 则是需要与 encryptedData 和 iv 匹配，用来获取用户信息
 
-        // ! 服务端 500 错误 很可能是 decryptData 传入的参数不正确
+        // ! 服务端 500 错误且无特殊 error message 很可能是 decryptData 传入的参数不正确
         // 检查是否存在该用户 没有则创建
         const user = await models.users.findOrCreate({
             where: { open_id: openid }
